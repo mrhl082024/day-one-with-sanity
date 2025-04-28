@@ -11,11 +11,16 @@ export const eventType = defineType({
         }),
         defineField({
             name:"slug",
-            type:"slug"
+            type:"slug",
+            options:{source:"name"}
         }),
         defineField({
             name:"eventType",
-            type:"string"
+            type:"string",
+            options: {
+                list:["in-person","virtual"],
+                layout:"radio",
+            }
         }),
         defineField({
             name:"date",
