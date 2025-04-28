@@ -4,6 +4,10 @@ export const eventType = defineType({
     name: "event",
     title: "Event",
     type: "document",
+    groups:[
+        {name:"details", title:"Details"},
+        {name:"editorial", title:"Editorial"}
+    ],
     fields: [
         defineField({
             name:"name",
