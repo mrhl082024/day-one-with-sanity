@@ -12,7 +12,10 @@ export const eventType = defineType({
         defineField({
             name:"slug",
             type:"slug",
-            options:{source:"name"}
+            options:{source:"name"},
+            validation:(rule)=> rule
+            .required()
+            .error("Required to generate a page on the website")
         }),
         defineField({
             name:"eventType",
@@ -28,7 +31,9 @@ export const eventType = defineType({
         }),
         defineField({
             name:"doorsOpen",
-            type:"number"
+            description:"Number of minutes before the start time for admission",
+            type:"number",
+            initialValue:60,
         }),
         defineField({
             name:"venue",
