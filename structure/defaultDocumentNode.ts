@@ -1,0 +1,1 @@
+import type { DefaultDocumentNodeResolver } from "sanity/structure";
