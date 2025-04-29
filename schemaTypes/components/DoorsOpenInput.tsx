@@ -6,5 +6,23 @@ function subtractMinutesFromDate(date: string, minutes: number) {
 }
 
 export function DoorsOpenInput(props: NumberInputProps) {
-  return <div style={{border: '1px solid red'}}>DoorsOpenInput</div>
+  const date = useFormValue(['date']) as string | undefined
+
+  return (
+    <Stack space={3}>
+      {props.renderDefault(props)}
+      {typeof props.value === 'number' && date ? (
+        <Text size={1}>
+          Doors open
+          {subtractMinutesFromDate(date, props.value).toLocaleDateString(undefined, {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+          })}
+        </Text>
+      ) : null}
+    </Stack>
+  )
 }
