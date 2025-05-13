@@ -3,4 +3,4 @@ import {eventType} from './eventType'
 import {venueType} from './venueType'
 import {reviewType} from './reviewType'
 
-export const schemaTypes = [reviewType, eventType, artistType, venueType]
+export const schemaTypes = [reviewType, artistType, venueType]
